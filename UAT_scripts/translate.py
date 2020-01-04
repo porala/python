@@ -6,5 +6,5 @@ def vocabulary(word):
     except KeyError:
         return "That bad word"
 
-word = input("Enter word: ")
+word = input("Enter word: ").lower()
 print(vocabulary(word))
