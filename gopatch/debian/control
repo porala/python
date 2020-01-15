@@ -1,0 +1,48 @@
+Source: patchman
+Section: python
+Priority: optional
+Maintainer: Marcus Furlong <furlongm@gmail.com>
+Uploaders: Marcus Furlong <furlongm@gmail.com>
+Build-Depends: debhelper (>=9.0.0), python (>= 2.7), dh-python, dh-exec
+Standards-Version: 3.9.7
+Homepage: https://github.com/furlongm/patchman
+Vcs-Git: git://github.com/furlongm/patchman
+Vcs-Browser: https://github.com/furlongm/patchman
+X-Python-Version: >= 2.7
+
+Package: python-patchman
+Architecture: all
+Homepage: https://github.com/furlongm/patchman
+Depends: ${misc:Depends}, python (>= 2.7), python-django (>= 1.11.0),
+ python-django-tagging, python-debian, python-rpm, python-progressbar,
+ python-defusedxml, python-django-extensions, python-colorama, python-requests,
+ python-humanize, python-django-bootstrap3, python-lzma, python-humanize,
+ python-magic, python-memcache, python-pip, python-lxml,
+ python-djangorestframework, memcached, libapache2-mod-wsgi,apache2
+Suggests: python-django-celery
+Description: Django-based patch status monitoring tool for linux systems.
+ .
+ Patchman provides a web interface for monitoring host package updates.
+ .
+ Patchman clients send a list of installed packages and enabled repositories to
+ the patchman server. The patchman server updates its package list for each
+ repository and determines which hosts require updates, whether those updates
+ are normal or security updates, and shows installed packages that are not part
+ of any repository. Hosts, packages, repositories and operating systems can all
+ be filtered (using features or arbitrary tags). For example, it is possible to
+ find out which hosts have a certain version of a package installed, and which
+ repository it comes from.
+ .
+ Patchman does not install update packages on hosts, it determines and records
+ what updates are available for each host. The patchman yum and apt plugins can
+ optionally send reports to the patchman server every time packages are
+ installed or removed.
+
+Package: patchman-client
+Architecture: all
+Homepage: https://github.com/furlongm/patchman
+Depends: ${misc:Depends}, curl
+Description: Client for the patchman monitoring system.
+ .
+ The client will send a list of packages and repositories to the upstream
+ patchman server.

@@ -3,7 +3,7 @@
 with open("urls.txt", "r") as file:
     lines = file.readlines()
 
-print(lines)
+# print(lines)
 
 with open("urls_corrected.txt", "w") as file:
     for line in lines:

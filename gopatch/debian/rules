@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+clean::
+	rm -rf build MANIFEST dist .pybuild
+	dh_clean
+
+export PYBUILD_NAME=patchman
+
+%:
+	dh $@ --with python2 --buildsystem=pybuild
+

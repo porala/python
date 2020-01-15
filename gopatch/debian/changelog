@@ -1,0 +1,306 @@
+patchman (1.2.2-1) main; urgency=medium
+
+  [ Tim Rightnour ]
+  * Patch for X_REAL_IP handling (#126)
+
+  [ Yannik Petersen ]
+  * Use djangos TimeZone aware timestamps (#125)
+
+  [ Marcus Furlong ]
+  * documentation updates (#129)
+  * add tags cli option
+  * add osgroup ordering by name
+  * use compressed xml for cefs in order to obtain all errata (#130)
+  * add checksum verification for CEFS (#131)
+
+ -- Marcus Furlong <furlongm@gmail.com>  Wed, 28 Aug 2019 04:32:17 +0000
+
+patchman (1.2.1-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * add failure output to client
+  * fix broken redirectview
+  * remove unneeded redirect to /
+  * set osgroup to null on delete
+  * strip surrounding whitespace from report elements
+  * allow httpd access to rabbit and memcache
+  * bump django version for rpm
+  * update installation docs
+  * update package installation instructions
+  * separate celery installation instructions
+  * update TODO
+  * update build instructions
+  * bump requirements for security fixes
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 22 Aug 2019 03:52:42 +0000
+
+patchman (1.2.0-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * djangorestframework / python2 support
+  * django-extensions / python2 fixes
+  * update logic to determine security repos
+  * convert to modern django layout
+  * celery 4 updates
+  * update supported installation targets
+  * convert to using app_config
+  * django2 compatibility
+  * used defusedxml instead of lxml
+  * remove settings modules from all files
+  * simplify yum xml parsing
+  * be consistent with httpresponse and redirect usage
+  * fix justification in progress bar
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 25 Jul 2019 04:50:32 +0000
+
+patchman (1.0.22-1) stable; urgency=medium
+
+  * additional fix for unicode literal breakage
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 19 Jul 2019 20:58:52 +0000
+
+patchman (1.0.21-2) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * use correct location for client in rpm spec
+  * use correct path for config file
+  * update installation docs
+  * use correct id for repo id
+  * update requirements
+  * use correct repo id var in all templates
+  * add unicode_literals to all files
+  * allow report processing
+  * update setup.py
+  * consistent argument ordering
+  * fix unicode_literal damage
+
+  [ Devin Christensen ]
+  * Pull report IP from X-Forwarded-For when present
+
+  [ Leon Koens ]
+  * Check for verbosity before printing
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 19 Jul 2019 20:29:50 +0000
+
+patchman (1.0.20-1) stable; urgency=medium
+
+  * update packages to remove default settings
+  * update installation docs
+  * remove unused file
+  * use correct path for client on debian
+  * use correct path for client on red hat
+  * handle sha1 as checksum type
+  * ignore case when checking rdns
+  * remove apostrophes from yum repo input
+  * lowercase hostnames and rdns from inception
+  * fix encoded spaces in yum urls
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 28 Feb 2019 04:20:25 +0000
+
+patchman (1.0.19-1) stable; urgency=medium
+
+  * add build dependency for dh-exec
+  * update rpm build arch to noarch
+  * add git-buildpackage to deb build dependencies
+  * fix repo deletion when processing report
+
+ -- Marcus Furlong <furlongm@gmail.com>  Tue, 11 Dec 2018 05:18:19 +0000
+
+patchman (1.0.18-1) stable; urgency=medium
+
+  * add deps and scripts for rpm generation
+  * specify dir as dep due to differing package naming
+  * add rpm spec file and build instructions for the client
+  * update docs with rpm installation instructions
+  * handle mirrorlists and metalinks differently from baseurls
+  * add missing dependency on humanize
+  * add missing dependency on httpd and mod_wsgi
+  * run syncdb when running migrations
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 06 Dec 2018 02:43:19 +0000
+
+patchman (1.0.17-1) stable; urgency=medium
+
+  * support for metalink urls on fedora/rhel/centos
+  * add metalink header to mirror templates
+
+ -- Marcus Furlong <furlongm@gmail.com>  Sat, 17 Nov 2018 08:02:50 +0000
+
+patchman (1.0.16-1) stable; urgency=medium
+
+  * use dh-exec to rename debian conf files
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 16 Nov 2018 06:34:50 +0000
+
+patchman (1.0.15-1) stable; urgency=medium
+
+  * rename apache config for debian
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 16 Nov 2018 06:19:25 +0000
+
+patchman (1.0.14-1) stable; urgency=medium
+
+  * add missing conf files
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 16 Nov 2018 05:51:20 +0000
+
+patchman (1.0.13-1) stable; urgency=medium
+
+  * update pypi packaging
+  * update package build instructions
+  * use dashboard url for home button
+  * don't clobber config files when upgrading on debian
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 16 Nov 2018 05:29:20 +0000
+
+patchman (1.0.12-1) stable; urgency=medium
+
+  * support older python-magic API
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 15 Nov 2018 07:07:13 +0000
+
+patchman (1.0.11-1) stable; urgency=medium
+
+  * fix handling of hostrepo deletions
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 15 Nov 2018 00:05:01 +0000
+
+patchman (1.0.10-1) stable; urgency=medium
+
+  * update debian files
+  * add ordering to operating system to fix django 1.11 warning
+  * add DEFAULT_PAGINATION_CLASS to silence warning on newer django_rest_framework
+  * attempt to workaround repos with stanzas that include lines that start with whitespace
+  * support for https apt repos
+  * add python-lzma as a dependency
+  * improve filetype detection with libmagic
+  * update requirements to include python-magic
+  * use Packages instead of Sources
+  * use correct requirements format for magic
+  * file and layout updates
+  * 1.0.10 release
+
+ -- Marcus Furlong <furlongm@gmail.com>  Wed, 14 Nov 2018 21:30:21 +0000
+
+patchman (1.0.8-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * update installation instructions
+  * use migrate without arguments for backwards compat
+  * bump to 1.0.8
+  * fix typo in client
+
+ -- Marcus Furlong <furlongm@gmail.com>  Sun, 07 Oct 2018 04:58:13 +0000
+
+patchman (1.0.6-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * update debian dependencies
+  * add python-django-bootstrap3 deb
+  * misc fixes
+  * switch to sqlite3 db by default
+
+ -- Marcus Furlong <furlongm@gmail.com>  Sat, 06 Oct 2018 22:12:12 +0000
+
+patchman (1.0.5-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * add deb build instructions
+  * bump version for pypi
+  * add missing file for pypi
+  * update debian dependencies
+
+ -- Marcus Furlong <furlongm@gmail.com>  Thu, 23 Mar 2017 12:10:37 +0000
+
+patchman (1.0.0-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * updates for django 1.8 and debian jessie
+  * fixes for django 1.9
+  * updates for latest version of zypper
+  * don't report errors for pseudo-package gpg-pubkey
+  * remove unused functions and clean up
+  * use modern template rendering style
+  * initial REST API implementation
+  * switch to django-bootstrap3
+  * add support for opensuse kernels
+  * switch to python-requests and cleanup request code
+  * add lzma support
+  * clean up cli printing, add some color
+  * support python3
+  * support for errata from https://cefs.steve-meier.de/
+
+ -- Marcus Furlong <furlongm@gmail.com>  Wed, 15 Mar 2017 02:57:53 +0000
+
+patchman (0.9.4-1) stable; urgency=medium
+
+  [ Marcus Furlong ]
+  * handle apache 2.2 and 2.4 correctly
+  * add missing html templates
+  * flake8 fixes
+  * use get_queryset instead of get_query_set
+  * add TEST_RUNNER variable for django 1.6+
+  * workaround yum updates error
+  * remove dependency on south
+  * update deb to include apt hook, cronjob and installation details
+  * apache configuration and documentation updates
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 27 Feb 2015 15:51:06 +1100
+
+patchman (0.9.3-1) stable; urgency=medium
+
+  [ Russell Sim ]
+  * Added initial tox and travis-ci
+
+  [ Marcus Furlong ]
+  * remove support for debian lenny and older
+  * update required django versions, fixed #8
+  * add main
+  * import verbose from utils
+  * make repo found message informational
+  * update debian packaging configuration
+  * add apache2 dependency
+  * use apache 2.4 configuration
+  * fix setup.py
+  * flake8 fix for travis
+  * set secret key automatically to enable collectstatic
+  * debian package for client
+
+ -- Marcus Furlong <furlongm@gmail.com>  Wed, 04 Feb 2015 01:01:40 +0000
+
+patchman (0.9.2-1) stable; urgency=low
+
+  [ Marcus Furlong ]
+  * fix broken repo, package and update removal
+  * commit transaction before returning update id
+  * generate installed_apps after importing /etc/patchman/settings.py
+  * use correct syntax to delete m2m through object
+  * add django 1.6 transaction support and revert django 1.6 project layout
+  * add project path to sys.path for wsgi
+  * minor fixes and updates
+  * Update README
+  * also include deb packages that are in hold status
+  * simplify update finding process
+  * fix domains for hosts with no domains
+  * handle badly formed centos mirrorlist urls
+  * improve logic for finding kernel updates
+  * remove unused imports
+  * use refresh instead of update for repos
+  * clean up parser options
+  * update TODO
+  * fix parsing of deb repos with http origins (thanks to Chris Samuel)
+  * only complain about osgroups with no repos if osgroups are in use by some hosts
+
+  [ Dylan Graham ]
+  * Added filter for RedHat Subscription Management message
+
+  [ Marcus Furlong ]
+  * updates to help build debs
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 29 Aug 2014 06:48:32 +0000
+
+patchman (0.9.1-1) stable; urgency=low
+
+  * Initial release.
+
+ -- Marcus Furlong <furlongm@gmail.com>  Fri, 28 Feb 2014 00:00:00 +1100

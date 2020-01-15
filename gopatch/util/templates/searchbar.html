@@ -1,0 +1,13 @@
+{% load bootstrap3 %}
+<div>
+  <form method="get">
+    <div class="input-group">
+      <input type="text" class="form-control input-sm" placeholder="Search" name="search" value="{{ terms }}" id="search">
+      <div class="input-group-btn">
+        <button class="btn btn-primary btn-sm" type="submit">{% bootstrap_icon "search" %}</button>
+      </div>
+    </div>
+  </form>
+</div>
+<br />
+<script type="text/javascript">document.getElementById("search").focus();</script>
